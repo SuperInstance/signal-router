@@ -75,6 +75,12 @@ pub struct Router {
     tick_counter: u64,
 }
 
+impl Default for Router {
+    fn default() -> Self {
+        Self::new()
+    }
+}
+
 impl Router {
     pub fn new() -> Self {
         Router {
@@ -120,7 +126,7 @@ impl Router {
                 continue;
             }
 
-            let results = self.apply_algorithm(&route, signal.clone());
+            let results = self.apply_algorithm(route, signal.clone());
             for s in results {
                 if let Some(port) = self.ports.iter_mut().find(|p| p.id == s.target || p.id == s.source) {
                     if port.matches(&s) {
