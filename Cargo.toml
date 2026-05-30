@@ -1,0 +1,8 @@
+[package]
+name = "signal-router"
+version = "0.1.0"
+edition = "2021"
+description = "Plug-and-play signal routing — 6 algorithms, deadband, filter/transform pipelines"
+license = "MIT"
+
+[dependencies]
